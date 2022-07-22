@@ -1,0 +1,33 @@
+<div class="container p-4">
+    <div class="row">
+
+     {{#each workshop}}
+     <div class="col-md-3">
+        <div class="card text-center">
+            <div class="card-body">
+                 <h3 class="card-title text-uppercase">
+                        {{tittle}}
+                    </h3>
+                    <h5 class="card-title text-uppercase">
+                        {{address}}
+                    </h5>
+                    <p class="m-2">{{description}}</p>
+                    <p>{{timeago create_at}}</p>
+                     <a href="/workshop/delete/{{id}}" class="btn btn-danger">Eliminar</a>
+                      <a href="/workshop/edit/{{id}}" class="btn btn-secondary m-2">Editar</a>
+                   <a href="" class="btn btn-success">Ver ubicación</a>
+                  
+                
+            </div>
+        </div>
+     </div>
+     {{else}}
+     <div class="col-md-4 mx-auto">
+        <div class="card card-body text-center">
+            <p>No hay Talleres registrados</p>
+            <a href="/workshop/add">Registra tú taller</a>
+        </div>
+     </div>
+     {{/each}}   
+    </div>
+</div>
