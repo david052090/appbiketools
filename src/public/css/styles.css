@@ -60,16 +60,45 @@ body {
 .nav-link:hover {
   color: #f5aa26;
 }
-
+.logo{
+    width: 40px;
+}
+.link-boton {
+    margin-left: 8%;
+  }
+  .botons-login {
+    width: 100%;
+    display: flex;
+    justify-content: end;
+    
+}
+#boton-close{
+    background: #d1e7dd;
+    border: none;
+}
+.alert-success {
+    --bs-alert-color: #0f5132;
+    --bs-alert-bg: #d1e7dd;
+    --bs-alert-border-color: #badbcc;
+    margin-left: 192%;
+}
+#boton-danger{
+    background: #f8d7da;
+    border: none;
+}
+.alert-danger {
+    --bs-alert-color: #842029;
+    --bs-alert-bg: #f8d7da;
+    --bs-alert-border-color: #f5c2c7;
+    margin-left: 265%;
+}
 @media (min-width: 992px) {
   .navbar-expand-lg .navbar-collapse {
     display: flex !important;
     flex-basis: auto;
     margin-left: 45%;
   }
-  .link-boton {
-    margin-left: 300%;
-  }
+  
   .navbar-expand-lg .navbar-nav {
     flex-direction: row;
     width: 100%;
