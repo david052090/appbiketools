@@ -6,16 +6,16 @@
                 <div class="card-body">
                     <form action="/workshop/add" method="POST">
                     <div class="form-group p-2">
-                        <input type="text" class="form-control" name="tittle" placeholder="Titulo" autofocus>
+                        <input type="text" class="form-control" name="tittle" placeholder="Titulo" autofocus required>
                     </div>
                     <div class="form-group p-2">
-                        <input type="text" class="form-control" name="address" placeholder="Dirección">
+                        <input type="text" class="form-control" name="address" placeholder="Dirección" required>
                     </div>
                     <div class="form-group p-2">
-                        <textarea name="description" rows="2" class="form-control" placeholder="Descripción"></textarea>
+                        <textarea name="description" rows="2" class="form-control" placeholder="Descripción" required></textarea>
                     </div>
                     <dv class="form-group">
-                        <button class="btn btn-success btn-block">
+                        <button class="btn btn-success btn-block btn-add">
                             Guardar
                         </button>
                     </dv>

@@ -8,16 +8,20 @@
       <ul class="navbar-nav">
         {{#if user}}
         <li class="nav-item">
-          <a class="nav-link active" aria-current="page" href="/workshop">Talleres</a>
+          <a class="nav-link" aria-current="page" href="/workshop">Talleres</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link active" href="/workshop/add">Agregar un Taller</a>
+          <a class="nav-link" href="/workshop/add">Agregar un Taller</a>
         </li>
         <li class="nav-item">
-          <a href="/profile" class="nav-link">Perfil</a>
+          <a class="nav-link" aria-current="page" href="/search">Buscar</a>
         </li>
-        <li class="nav-item">
-          <a href="/logout" class="nav-link">Cerrar sesión</a>
+        <li class="nav-item logout-user">
+          
+          <a href="/profile" class="nav-link"><i class="fa-solid fa-user"></i>{{user.username}}</a>
+        </li>
+        <li class="nav-item logout">
+          <a href="/logout" class="nav-link btn btn-danger text text-white">Cerrar sesión</a>
         </li>
         {{else}}
         <li class="nav-item">

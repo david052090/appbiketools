@@ -1,6 +1,8 @@
 const express = require("express");
 const morgan = require("morgan");
 const expressHbs = require("express-handlebars");
+const validator = require("express-validator");
+const bodyParser = require("body-parser");
 const path = require("path");
 const flash = require("connect-flash");
 const session = require("express-session");
@@ -10,6 +12,7 @@ const passport = require("passport");
 const { database } = require("./keys");
 
 //Inicializar
+
 const app = express();
 require("./lib/passport");
 
@@ -57,6 +60,9 @@ app.use(require("./routes"));
 app.use(require("./routes/authentication"));
 app.use("/workshop", require("./routes/workshop"));
 
+app.get("/search", (req, res) => {
+  res.render("./workshop/search");
+});
 //Public
 app.use(express.static(path.join(__dirname, "public")));
 

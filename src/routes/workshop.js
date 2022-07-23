@@ -15,6 +15,7 @@ router.post("/add", isLoggedIn, async (req, res) => {
     address,
     description,
   };
+
   await pool.query("INSERT INTO workshop set ?", [newWorks]);
   req.flash("success", "Taller guardado correctamente");
   res.redirect("/workshop");
