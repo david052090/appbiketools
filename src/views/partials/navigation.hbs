@@ -1,9 +1,15 @@
 <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
   <div class="container">
     <a class="navbar-brand" href="/"> <img src="/img/bicicleta.png" alt="" class="logo"> BikeTools</a>
-    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+    {{#if user}}
+     <li class="nav-item logout-user" id="boton-logout">
+          
+          <a href="/logout" class="nav-link">Salir<i class="fa-solid fa-arrow-right-from-bracket"></i></a>
+        </li>
+        {{/if}}
+    <!--<button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
-    </button>
+    </button>-->
     <div class="collapse navbar-collapse" id="navbarNav">
       <ul class="navbar-nav">
         {{#if user}}
@@ -26,10 +32,10 @@
         {{else}}
         <div class="botons-login">
         <li class="nav-item link-boton">
-          <a href="/login" class="nav-link">Ingresar</a>
+          <a href="/login" class="nav-link btn btn-light">Ingresar</a>
         </li>
         <li class="nav-item link-boton">
-          <a href="/signup" class="nav-link">Registrar</a>
+          <a href="/signup" class="nav-link btn btn-outline-light">Registrar</a>
         </li>
         </div>
         
@@ -40,3 +46,24 @@
     </div>
   </div>
 </nav>
+<!---menu app--->
+{{#if user}}
+<nav class="nav" id="menu-app">
+        <a href="/workshop" class="nav__link nav__link--active">
+            <i class="fa-solid fa-list"></i>
+            <span class="nav__text">Talleres</span>
+        </a>
+        <a href="/workshop/add" class="nav__link nav__link--active">
+           <i class="fa-solid fa-plus"></i>
+            <span class="nav__text">Agregar Taller</span>
+        </a>
+        <a href="/search" class="nav__link nav__link--active" id="active_home">
+            <i class="fa-solid fa-magnifying-glass"></i>
+            <span class="nav__text">Buscar</span>
+        </a>
+        <a href="/profile" class="nav__link nav__link--active">
+            <i class="fa-solid fa-user"></i>
+            <span class="nav__text">Mi Cuenta</span>
+        </a>
+    </nav>
+     {{/if}}

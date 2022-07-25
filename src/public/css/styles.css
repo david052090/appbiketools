@@ -1,5 +1,5 @@
 body {
-  background: #f5f6f5;
+  background: #ffff;
   font-family: "Roboto", sans-serif;
   
 }
@@ -60,6 +60,17 @@ body {
 .nav-link:hover {
   color: #f5aa26;
 }
+.btn-light{
+  color: #000;
+}
+.img-log{
+  width: 100px;
+}
+.img-login{
+  width: 100%;
+  display: flex;
+  
+}
 .logo{
     width: 40px;
 }
@@ -72,26 +83,69 @@ body {
     justify-content: end;
     
 }
-#boton-close{
-    background: #d1e7dd;
-    border: none;
-}
+
 .alert-success {
     --bs-alert-color: #0f5132;
     --bs-alert-bg: #d1e7dd;
     --bs-alert-border-color: #badbcc;
-    margin-left: 192%;
+    margin-left: -57%;
+    
 }
-#boton-danger{
-    background: #f8d7da;
-    border: none;
-}
+
 .alert-danger {
     --bs-alert-color: #842029;
     --bs-alert-bg: #f8d7da;
     --bs-alert-border-color: #f5c2c7;
-    margin-left: 265%;
+    margin-left: -57%;
 }
+.cart-mobile-2{
+  display: flex;
+    justify-content: center;
+    padding-bottom: 2px;
+}
+.cart-mobile-2 p{
+  margin-right: 8px;
+}
+/*menu app*/
+.nav{
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  height: 55px;
+  box-shadow: 0 0 3px rgba(0,0,0,0.2);
+  background-color: rgba(33,37,41);
+  display: flex;
+  overflow-x: auto;
+}
+
+.nav__link{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  flex-grow: 1;
+  min-width: 50px;
+  overflow: hidden;
+  white-space: nowrap;
+  font-family: sans-serif;
+  font-size: 13px;
+  color: #fff;
+  text-decoration: none;
+  -webkit-tap-highlight-color: transparent;
+  transition: background-color 0.1s ease-in-out;
+}
+.nav__link:hover{
+  background-color: #F5AA26 ;
+}
+.nav__link--active:hover .nav__text{
+  color: yellow;
+}
+/*Boton salir*/
+.fa-arrow-right-from-bracket:before, .fa-sign-out:before {
+  content: "\f08b";
+  margin: 5px;
+}
+/*media Queries*/
 @media (min-width: 992px) {
   .navbar-expand-lg .navbar-collapse {
     display: flex !important;
@@ -102,5 +156,25 @@ body {
   .navbar-expand-lg .navbar-nav {
     flex-direction: row;
     width: 100%;
+  }
+  .cart-mobile{
+    display:none;
+    
+  }
+  #menu-app{
+    display: none;
+  }
+  #boton-logout{
+display: none;
+  }
+}
+@media(max-width:992px){
+  .logout-user{
+    display: block;
+  }
+  .fa-user:before {
+    content: "\f007";
+    font-size: 15px;
+    margin: 9px;
   }
 }
