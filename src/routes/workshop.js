@@ -9,11 +9,14 @@ router.get("/add", isLoggedIn, (req, res) => {
 });
 
 router.post("/add", isLoggedIn, async (req, res) => {
-  const { tittle, address, description } = req.body;
+  const { tittle, address, phone, schedule, description, url } = req.body;
   const newWorks = {
     tittle,
     address,
+    phone,
+    schedule,
     description,
+    url,
   };
 
   await pool.query("INSERT INTO workshop set ?", [newWorks]);
@@ -41,11 +44,14 @@ router.get("/edit/:id", isLoggedIn, async (req, res) => {
 
 router.post("/edit/:id", isLoggedIn, async (req, res) => {
   const { id } = req.params;
-  const { tittle, address, description } = req.body;
+  const { tittle, address, phone, schedule, description, url } = req.body;
   const newWorks = {
     tittle,
     address,
+    phone,
+    schedule,
     description,
+    url,
   };
 
   await pool.query("UPDATE workshop set ? WHERE id = ?", [newWorks, id]);

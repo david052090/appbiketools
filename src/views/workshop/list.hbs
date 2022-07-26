@@ -10,26 +10,32 @@
     <div class="row">
         {{#each workshop}}
      <div class="col-md-3">
-        <div class="card text-center mb-4">
+        <div class="card text-lef mb-4">
             <div class="card-body">
-                 <h3 class="card-title text-uppercase">
+                 <h4 class="card-title text-uppercase text text-center">
                         {{tittle}}
-                    </h3>
-                    <h5 class="card-title text-uppercase">
-                        {{address}}
-                    </h5>
-                    <p class="m-2">{{description}}</p>
-                    <p>{{timeago create_at}}</p>
-                     <a href="/workshop/delete/{{id}}" class="btn btn-danger">Eliminar</a>
-                      <a href="/workshop/edit/{{id}}" class="btn btn-secondary m-2">Editar</a>
-                   <a href="" class="btn btn-success">Ver ubicación</a>
-                  
-                
-            </div>
-        </div>
-     </div>
-     {{else}}
-     <div class="col-md-4 mx-auto">
+                    </h4>
+                    <h6 class="card-title">
+                       Dirección: {{address}}
+                    </h6>
+                    <h6 class="card-title">
+                        Celular: {{phone}}
+                    </h6>
+                    <h6 class="card-title">
+                        Horarios: {{schedule}}
+                    </h6>
+                    <!--<p class="m-2">{{description}}</p>-->
+                    <p class="text text-center">{{timeago create_at}}</p>
+                    <a href="{{url}}" class="btn btn-success btn-edit"><i class="fa-solid fa-location-dot"></i>Ver ubicación</a>
+                    <div class="btn-edit m-2">
+                     <a href="/workshop/delete/{{id}}" class="btn btn-danger m-2">Eliminar</a>
+                    <a href="/workshop/edit/{{id}}" class="btn btn-secondary">Editar</a>
+                    </div>
+                    </div>
+                </div>
+                </div>
+                {{else}}
+        <div class="col-md-4 mx-auto">
         <div class="card card-body text-center">
             <p>No hay Talleres registrados</p>
             <a href="/workshop/add">Registra tú taller</a>

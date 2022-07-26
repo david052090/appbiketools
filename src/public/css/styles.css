@@ -60,6 +60,7 @@ body {
 .nav-link:hover {
   color: #f5aa26;
 }
+
 .btn-light{
   color: #000;
 }
@@ -116,6 +117,7 @@ body {
   background-color: rgba(33,37,41);
   display: flex;
   overflow-x: auto;
+  z-index: 99;
 }
 
 .nav__link{
@@ -134,16 +136,35 @@ body {
   -webkit-tap-highlight-color: transparent;
   transition: background-color 0.1s ease-in-out;
 }
+
 .nav__link:hover{
+  color: #fff;
   background-color: #F5AA26 ;
 }
-.nav__link--active:hover .nav__text{
-  color: yellow;
+/*botones tarjetas*/
+.btn-edit{
+  display: flex;
+    justify-content: center;
+    align-items: center;
+  
+}
+.fa-location-dot:before, .fa-map-marker-alt:before {
+  content: "\f3c5";
+  margin: 4px;
 }
 /*Boton salir*/
 .fa-arrow-right-from-bracket:before, .fa-sign-out:before {
   content: "\f08b";
   margin: 5px;
+}
+/*boton ayuda*/
+.help{
+  display: flex;
+    margin-left: 25%;
+}
+.fa-circle-question:before, .fa-question-circle:before {
+  content: "\f059";
+  margin: 4px;
 }
 /*media Queries*/
 @media (min-width: 992px) {
@@ -166,6 +187,9 @@ body {
   }
   #boton-logout{
 display: none;
+  }
+  .help{
+    display: none;
   }
 }
 @media(max-width:992px){

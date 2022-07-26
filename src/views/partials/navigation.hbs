@@ -2,6 +2,10 @@
   <div class="container">
     <a class="navbar-brand" href="/"> <img src="/img/bicicleta.png" alt="" class="logo"> BikeTools</a>
     {{#if user}}
+    <li class="nav-item help">
+      <a href="/logout" class="nav-link">Ayuda<i class="fa-regular fa-circle-question"></i></a>
+    </li>
+    
      <li class="nav-item logout-user" id="boton-logout">
           
           <a href="/logout" class="nav-link">Salir<i class="fa-solid fa-arrow-right-from-bracket"></i></a>
@@ -63,7 +67,7 @@
         </a>
         <a href="/profile" class="nav__link nav__link--active">
             <i class="fa-solid fa-user"></i>
-            <span class="nav__text">Mi Cuenta</span>
+            <span class="nav__text">{{user.username}}</span>
         </a>
     </nav>
      {{/if}}
