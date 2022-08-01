@@ -1,0 +1,41 @@
+<div class="col-md-4 mx-auto p-4">
+        <div class="card card-body text-center title-header">
+            <h3 class="text text-center">Talleres Registrados</h3>
+        </div>
+     </div>
+<div class="container p-4">
+    <div class="row">
+        {{#each workshop}}
+     <div class="col-md-3">
+        <div class="card text-lef mb-4">
+          <div class="card-body">
+                <img src="uploads/banner-1.png" class="card-img-top mb-2" alt="">
+                 <h4 class="card-title text-uppercase text text-center">
+                        {{tittle}}
+                    </h4>
+                    <h6 class="card-title">
+                       Dirección: {{address}}
+                    </h6>
+                    <h6 class="card-title">
+                        Celular: {{phone}}
+                    </h6>
+                    <h6 class="card-title">
+                        Horarios: {{schedule}}
+                    </h6>
+                    <p class="text text-center">{{timeago create_at}}</p>
+                    <a href="/workshopprofile" class="btn btn-success btn-edit">Ver Taller</a>
+                 </div>
+                 
+                </div>
+                </div>
+                {{else}}
+        <div class="col-md-4 mx-auto">
+        <div class="card card-body text-center">
+            <p>No hay Talleres registrados</p>
+      </div>
+     </div>
+     {{/each}}   
+    </div>
+</div>
+
+ 

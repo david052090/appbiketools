@@ -53,8 +53,9 @@ passport.use(
         username,
         password,
       };
-      newUser.password = await helpers.encryptPassword(password);
+
       // Guardando en la base de datos//
+      newUser.password = await helpers.encryptPassword(password);
       const result = await pool.query("INSERT INTO users SET ? ", newUser);
       newUser.id = result.insertId;
       return done(null, newUser);

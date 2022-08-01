@@ -40,4 +40,28 @@ ALTER TABLE workshop
 ADD schedule VARCHAR(100)NOT NULL;
 
 ALTER TABLE workshop
-ADD url VARCHAR(250)NOT NULL
+ADD url VARCHAR(250)NOT NULL;
+
+ALTER TABLE workshop
+ADD UNIQUE (address);
+
+DESCRIBE users;
+
+TRUNCATE TABLE users;
+
+
+ALTER TABLE users
+MODIFY id INT(11) NOT NULL;
+
+
+
+ALTER TABLE users
+ADD PRIMARY KEY (id);
+
+
+ALTER TABLE users DROP COLUMN id;
+
+ALTER TABLE workshop
+ADD CONSTRAINT fk_user FOREIGN KEY (user_id) REFERENCES users(id);
+
+

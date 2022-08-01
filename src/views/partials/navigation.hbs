@@ -1,9 +1,10 @@
+{{#if user}}
 <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
   <div class="container">
     <a class="navbar-brand" href="/"> <img src="/img/bicicleta.png" alt="" class="logo"> BikeTools</a>
     {{#if user}}
     <li class="nav-item help">
-      <a href="/logout" class="nav-link">Ayuda<i class="fa-regular fa-circle-question"></i></a>
+      <a href="/help" class="nav-link">Ayuda<i class="fa-regular fa-circle-question"></i></a>
     </li>
     
      <li class="nav-item logout-user" id="boton-logout">
@@ -18,20 +19,23 @@
       <ul class="navbar-nav">
         {{#if user}}
         <li class="nav-item">
-          <a class="nav-link" aria-current="page" href="/workshop">Talleres</a>
+          <i class="fa-solid fa-list"></i><a class="nav-link" aria-current="page" href="/workshoplist">Talleres</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="/workshop/add">Agregar un Taller</a>
+          <i class="fa-solid fa-screwdriver-wrench"></i><a class="nav-link" aria-current="page" href="/workshop">Mi Taller</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" aria-current="page" href="/search">Buscar</a>
+          <i class="fa-solid fa-plus"></i><a class="nav-link" href="/workshop/add">Agregar un Taller</a>
+        </li>
+        <li class="nav-item">
+          <i class="fa-solid fa-magnifying-glass"></i><a class="nav-link" aria-current="page" href="/search">Buscar</a>
         </li>
         <li class="nav-item logout-user">
           
           <a href="/profile" class="nav-link"><i class="fa-solid fa-user"></i>{{user.username}}</a>
         </li>
         <li class="nav-item logout">
-          <a href="/logout" class="nav-link btn btn-danger text text-white">Cerrar sesión</a>
+          <a href="/logout" class="nav-link text text-white">Salir<i class="fa-solid fa-arrow-right-from-bracket"></i></a>
         </li>
         {{else}}
         <div class="botons-login">
@@ -42,20 +46,22 @@
           <a href="/signup" class="nav-link btn btn-outline-light">Registrar</a>
         </li>
         </div>
-        
-        {{/if}}
-        
-       
+      {{/if}}
       </ul>
     </div>
   </div>
 </nav>
+ {{/if}}
 <!---menu app--->
 {{#if user}}
 <nav class="nav" id="menu-app">
-        <a href="/workshop" class="nav__link nav__link--active">
+        <a href="/workshoplist" class="nav__link nav__link--active">
             <i class="fa-solid fa-list"></i>
             <span class="nav__text">Talleres</span>
+        </a>
+         <a href="/workshop" class="nav__link nav__link--active">
+            <i class="fa-solid fa-screwdriver-wrench"></i>
+            <span class="nav__text">Mi Taller</span>
         </a>
         <a href="/workshop/add" class="nav__link nav__link--active">
            <i class="fa-solid fa-plus"></i>

@@ -17,6 +17,7 @@ router.post("/add", isLoggedIn, async (req, res) => {
     schedule,
     description,
     url,
+    user_id: req.user.id,
   };
 
   await pool.query("INSERT INTO workshop set ?", [newWorks]);
@@ -24,13 +25,16 @@ router.post("/add", isLoggedIn, async (req, res) => {
   res.redirect("/workshop");
 });
 router.get("/", isLoggedIn, async (req, res) => {
-  const workshop = await pool.query("SELECT * FROM workshop");
+  const workshop = await pool.query(
+    "SELECT * FROM workshop WHERE user_id = ?",
+    [req.user.id]
+  );
   res.render("workshop/list", { workshop });
 });
 
 router.get("/delete/:id", isLoggedIn, async (req, res) => {
   const { id } = req.params;
-  await pool.query("DELETE FROM workshop WHERE ID = ?", [id]);
+  await pool.query("DELETE FROM workshop WHERE id = ?", [id]);
   req.flash("success", "Taller eliminado correctamente");
   res.redirect("/workshop");
 });

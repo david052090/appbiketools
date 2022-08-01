@@ -25,10 +25,10 @@ body {
   padding: 0;
 }
 .logout {
-  margin-left: 4%;
+  margin-left: 0;
 }
 .logout-user {
-  padding-left: 4%;
+  padding-left: 0;
 }
 
 .fa-solid,
@@ -44,6 +44,8 @@ body {
 }
 .btn-add {
   width: 100%;
+  background: #F5AA26;
+    border: #F5AA26;
 }
 
 .nav-link {
@@ -90,6 +92,7 @@ body {
     --bs-alert-bg: #d1e7dd;
     --bs-alert-border-color: #badbcc;
     margin-left: -57%;
+    margin-top: 18%;
     
 }
 
@@ -166,22 +169,140 @@ body {
   content: "\f059";
   margin: 4px;
 }
+
+/*Maps*/
+.img-map{
+  width: 100%;
+  height: 150px;
+}
+.btn-services{
+  text-decoration: none;
+  list-style: none;
+  border: none;
+}
+#mapCanvas{
+  width: 100%;
+  height: 100vh;
+  
+}
+/*sección help*/
+.icon{
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  
+}
+.title-help{
+  color: #fff;
+}
+.title-help-call{
+  color: #fff;
+  padding-bottom: 10px;
+}
+.help-icon{
+  background: #14ab64;
+  
+}
+.rut-icon{
+  text-decoration: none;
+}
+.message-text{
+  color: #fff;
+}
+.message-text-call{
+  margin-top: 16px;
+  color: #fff;
+}
+.fa-whatsapp:before {
+  content: "\f232";
+  font-size: 94px;
+  color: #fff;
+}
+.fa-phone-alt:before, .fa-phone-flip:before {
+  content: "\f879";
+  font-size: 68px;
+}
+/*modal*/
+
+.info {
+  width: 100%;
+  padding: 10px;
+}
+.fa-whatsapp:before {
+  content: "\f232";
+  font-size: 20px;
+  color: #fff;
+  margin-right: 6px;
+}
+
+.fa-mobile-android-alt:before, .fa-mobile-screen:before {
+  content: "\f3cf";
+  margin-right: 4px;
+}
+
+.btn-ubication{
+  width: 100%;
+}
+.navbar{
+  position: fixed;
+  width: 100%;
+  z-index: 99;
+}
+.title-header{
+  margin-top: 18%;
+}
+.card-edit{
+  margin-top: 21%;
+}
+.card-profile{
+  border: none;
+}
+.card-profile-body{
+  width: 100%;
+  height: auto;
+}
+.container-center{
+  margin-bottom: 10%;
+}
+.footer-btn{
+  display: flex;
+  justify-content: center;
+}
+.nav-item{
+  display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-right: 19px;
+}
+.fa-location-dot:before, .fa-map-marker-alt:before {
+  content: "\f3c5";
+  margin: 4px;
+  color: #F5AA26;
+}
+.fa-phone:before {
+  content: "\f095";
+  color: #F5AA26;
+}
+.fa-clock-four:before, .fa-clock:before {
+  content: "\f017";
+  color: #F5AA26;
+}
 /*media Queries*/
 @media (min-width: 992px) {
   .navbar-expand-lg .navbar-collapse {
     display: flex !important;
     flex-basis: auto;
-    margin-left: 45%;
+    
   }
   
   .navbar-expand-lg .navbar-nav {
+    display: flex;
+    justify-content: end;
     flex-direction: row;
     width: 100%;
   }
-  .cart-mobile{
-    display:none;
-    
-  }
+  
   #menu-app{
     display: none;
   }
@@ -191,6 +312,13 @@ display: none;
   .help{
     display: none;
   }
+  
+  .img-fluid {
+    /* max-width: 100%; */
+    height: 385px;
+    width: 100%;
+    object-fit: cover;
+}
 }
 @media(max-width:992px){
   .logout-user{
@@ -201,4 +329,19 @@ display: none;
     font-size: 15px;
     margin: 9px;
   }
+  
+  .img-fluid {
+    max-width: 100%;
+    height: auto;
+    
+}
+.logout {
+  margin-left: 4%;
+}
+.nav-item {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-right: 13px;
+}
 }
