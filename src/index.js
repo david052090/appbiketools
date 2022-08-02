@@ -76,10 +76,8 @@ app.use("/workshop", require("./routes/workshop"));
 app.use(require("./routes/uploads"));
 app.use(require("./routes/workshoplist"));
 app.use(require("./routes/workshopprofile"));
+app.get("/search", require("./routes/search"));
 
-app.get("/search", (req, res) => {
-  res.render("./workshop/search");
-});
 app.get("/help", (req, res) => {
   res.render("./static/help");
 });
