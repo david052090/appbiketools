@@ -1,6 +1,5 @@
 const express = require("express");
 const router = express.Router();
-
 const pool = require("../database");
 const { isLoggedIn } = require("../lib/auth");
 
@@ -19,11 +18,12 @@ router.post("/add", isLoggedIn, async (req, res) => {
     url,
     user_id: req.user.id,
   };
-
+  //Guarda Taller en la BD
   await pool.query("INSERT INTO workshop set ?", [newWorks]);
   req.flash("success", "Taller guardado correctamente");
   res.redirect("/workshop");
 });
+
 router.get("/", isLoggedIn, async (req, res) => {
   const workshop = await pool.query(
     "SELECT * FROM workshop WHERE user_id = ?",
@@ -31,13 +31,14 @@ router.get("/", isLoggedIn, async (req, res) => {
   );
   res.render("workshop/list", { workshop });
 });
-
+//Borra los datos del taller en la BD
 router.get("/delete/:id", isLoggedIn, async (req, res) => {
   const { id } = req.params;
   await pool.query("DELETE FROM workshop WHERE id = ?", [id]);
   req.flash("success", "Taller eliminado correctamente");
   res.redirect("/workshop");
 });
+//Edita el taller en la BD
 router.get("/edit/:id", isLoggedIn, async (req, res) => {
   const { id } = req.params;
   const workshop = await pool.query("SELECT * FROM workshop WHERE id = ?", [
@@ -62,4 +63,5 @@ router.post("/edit/:id", isLoggedIn, async (req, res) => {
   req.flash("success", "Taller actualizado correctamente");
   res.redirect("/workshop");
 });
+
 module.exports = router;

@@ -13,10 +13,12 @@
                 <div class="card-body">
                    <form action="/login" method="POST">
                     <div class="form-group p-2">
-                        <input type="text" name="username" placeholder="Ingresa Usuario" class="form-control" required>
+                        <label for="username" class="labels">Nombre de usuario</label>
+                        <input type="text" name="username" placeholder="Ingrese su usuario" class="form-control" required>
                     </div>
                     <div class="form-group p-2">
-                        <input type="password" name="password" placeholder="Contrasena" class="form-control" required>
+                         <label for="password" class="labels">Contraseña</label>
+                        <input type="password" name="password" placeholder="Ingrese su contraseña" class="form-control" required>
                     </div>
                      <div class="form-group p-2">
                        <button class="btn btn-success btn-block btn-add"><i class="fa-solid fa-arrow-right-to-bracket"></i>Ingresar</button>

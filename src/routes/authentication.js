@@ -6,6 +6,7 @@ const { isLoggedIn, isNotLoggedIn } = require("../lib/auth");
 
 // Registro de usuario
 router.get("/signup", isNotLoggedIn, (req, res) => {
+  console.log(req.flash("error"));
   res.render("auth/signup");
 });
 
@@ -25,13 +26,6 @@ router.get("/login", isNotLoggedIn, (req, res) => {
 });
 
 router.post("/login", isNotLoggedIn, (req, res, next) => {
-  /*req.check("username", "Username is Required").notEmpty();
-  req.check("password", "Password is Required").notEmpty();
-  const errors = req.validationErrors();
-  if (errors.length > 0) {
-    req.flash("message", errors[0].msg);
-    res.redirect("/login");
-  }*/
   passport.authenticate("local.login", {
     successRedirect: "/profile",
     failureRedirect: "/login",

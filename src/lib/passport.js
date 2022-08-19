@@ -47,18 +47,31 @@ passport.use(
       passReqToCallback: true,
     },
     async (req, username, password, done) => {
-      const { fullname } = req.body;
+      const { fullname, id_cd, email } = req.body;
       let newUser = {
         fullname,
+        id_cd,
+        email,
         username,
         password,
       };
-
-      // Guardando en la base de datos//
-      newUser.password = await helpers.encryptPassword(password);
-      const result = await pool.query("INSERT INTO users SET ? ", newUser);
-      newUser.id = result.insertId;
-      return done(null, newUser);
+      try {
+        // Guardando en la base de datos//
+        newUser.password = await helpers.encryptPassword(password);
+        const result = await pool.query("INSERT INTO users SET ? ", newUser);
+        newUser.id = result.insertId;
+        return done(null, newUser);
+      } catch (error) {
+        console.log("error catch", error);
+        return done(
+          null,
+          false,
+          req.flash(
+            "message",
+            "Los datos de este usuario ya estan registrados."
+          )
+        );
+      }
     }
   )
 );

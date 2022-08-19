@@ -1,0 +1,10 @@
+{
+    "type": "FeatureCollection",
+    "name": "talleresdebicicletas",
+    "crs": { "type": "name", "properties": { "name": "urn:ogc:def:crs:EPSG::3857" } },
+    "features": [
+    { "type": "Feature", "properties": { "OBJECTID": 58, "NOMBRE": "Universidad Central (Sede Centro)", "HORARIO": "L-S 06,00 - 22:30  D 06:00 - 16:00", "DIRECCION": "CL 21 4 40", "CUPOS": 126.0, "TIPOLOGIA": "Privado", "AÑO": 2017.0, "X": -74.068657, "Y": 4.605609, "LOCALIDAD": "3", "SELLO": "1" }, "geometry": { "type": "Point", "coordinates": [ -8245285.18099999987, 513247.06529999896884 ] } }
+    
+    
+    ]
+    }

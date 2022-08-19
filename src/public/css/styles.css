@@ -155,6 +155,52 @@ body {
   background-color:#F5AA26;
   border: #F5AA26;
 }
+.btn-help{
+  background-color: green;
+  border: green;
+  width: 70%;
+  height: 100px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-decoration: none;
+  border-radius: 10px;
+}
+
+.btn-help-2{
+  
+  width: 70%;
+  height: 100px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-decoration: none;
+  border-radius: 10px;
+  margin-left: 10px;
+}
+.btn-help-3{
+  background: #9633FF ;
+  width: 70%;
+  height: 100px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-decoration: none;
+  border-radius: 10px;
+  
+}
+.btn-help-4{
+  background: #9633FF ;
+  border: #9633FF;
+  width: 70%;
+  height: 100px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-decoration: none;
+  border-radius: 10px;
+  margin-left: 10px;
+}
 .btn-success:hover{
   background-color:#f9a40f;
 }
@@ -175,6 +221,10 @@ body {
 .fa-circle-question:before, .fa-question-circle:before {
   content: "\f059";
   margin: 4px;
+}
+.fa-book:before {
+  content: "\f02d";
+  margin-right: 5px;
 }
 
 /*Maps*/
@@ -305,6 +355,25 @@ body {
 }
 .form-upload{
   margin-top: 10%;
+}
+.labels{
+  display: flex;
+  justify-content: flex-start;
+}
+.container-help-btn{
+  width: 100%;
+  height: auto;
+  padding: 10px;
+  display: flex;
+  justify-content: space-around;
+  margin: auto;
+}
+.btn-profile{
+  background: green;
+  border: green;
+}
+.space-bottom{
+  margin-bottom: 15%;
 }
 /*media Queries*/
 @media (min-width: 992px) {

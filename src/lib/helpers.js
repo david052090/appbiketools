@@ -15,5 +15,4 @@ helpers.matchPassword = async (password, savedPassword) => {
     console.log(e);
   }
 };
-
 module.exports = helpers;
