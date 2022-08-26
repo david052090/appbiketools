@@ -21,12 +21,14 @@
         <li class="nav-item">
           <i class="fa-solid fa-list"></i><a class="nav-link" aria-current="page" href="/workshoplist">Talleres</a>
         </li>
+         {{#if user.profile}}
         <li class="nav-item">
           <i class="fa-solid fa-screwdriver-wrench"></i><a class="nav-link" aria-current="page" href="/workshop">Mi Taller</a>
         </li>
         <li class="nav-item">
           <i class="fa-solid fa-plus"></i><a class="nav-link" href="/workshop/add">Agregar un Taller</a>
         </li>
+        {{/if}}
         <li class="nav-item">
           <i class="fa-solid fa-magnifying-glass"></i><a class="nav-link" aria-current="page" href="/search">Buscar</a>
         </li>
@@ -59,6 +61,7 @@
             <i class="fa-solid fa-list"></i>
             <span class="nav__text">Talleres</span>
         </a>
+        {{#if user.profile}}
          <a href="/workshop" class="nav__link nav__link--active">
             <i class="fa-solid fa-screwdriver-wrench"></i>
             <span class="nav__text">Mi Taller</span>
@@ -67,6 +70,7 @@
            <i class="fa-solid fa-plus"></i>
             <span class="nav__text">Agregar Taller</span>
         </a>
+         {{/if}}
         <a href="/search" class="nav__link nav__link--active" id="active_home">
             <i class="fa-solid fa-magnifying-glass"></i>
             <span class="nav__text">Buscar</span>
