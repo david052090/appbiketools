@@ -86,9 +86,6 @@ app.get("/help", (req, res) => {
 app.use(express.static(path.join(__dirname, "public")));
 
 //Iniciando el servidor
-/*app.listen(app.get("port"), () => {
+app.listen(app.get("port"), () => {
   console.log("Servidor en puerto", app.get("port"));
-});*/
-app.listen(port, () => {
-  console.log(`App conectada el puerto ${port} `);
 });
