@@ -4,6 +4,6 @@ module.exports = {
     user: "root",
     password: "",
     database: "bike_tools",
-    port: "3308",
+    //port: "3308",
   },
 };
