@@ -1,6 +1,6 @@
 module.exports = {
   database: {
-    host: "localhost",
+    host: "",
     user: "root",
     password: "",
     database: "bike_tools",
