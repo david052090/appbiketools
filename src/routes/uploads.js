@@ -1,15 +1,17 @@
 const { Router } = require("express");
 const multer = require("multer");
-const upload = multer();
-
 const router = Router();
-const type = upload.single("img");
-
+const upload = multer({ dest: "./public/uploads/" });
+var type = upload.single("img");
 router.get("/uploads", (req, res) => {
   res.render("./uploadsimg/uploadedimg");
 });
-router.post("/uploads", type, (req, res) => {
-  console.log(req);
-});
+router.post(
+  "./public/uploads",
+  upload.single("img"),
+  function (req, res, next) {
+    res.send("imagen cargada");
+  }
+);
 module.exports = router;
 /////////////////////

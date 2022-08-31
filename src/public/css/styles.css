@@ -122,7 +122,6 @@ body {
   overflow-x: auto;
   z-index: 99;
 }
-
 .nav__link{
   display: flex;
   flex-direction: column;

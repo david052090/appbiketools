@@ -2,6 +2,9 @@
     <div class="row">
         <div class="col-md-4 mx-auto">
             <div class="card card-edit">
+                 <div class="card-header">
+                    <h3 class="text text-center">Modificar Taller</h3>
+                </div>
                 <div class="card-body">
                     <form action="/workshop/edit/{{workshop.id}}" method="POST">
                     <div class="form-group p-2">
@@ -24,7 +27,7 @@
                         <textarea name="description" rows="2" class="form-control" placeholder="Descripción">{{workshop.description}}</textarea>
                     </div>
                     <dv class="form-group">
-                        <button class="btn btn-success btn-block">
+                        <button class="btn btn-success btn-block btn-add">
                             Guardar
                         </button>
                     </dv>
