@@ -1,9 +1,9 @@
 module.exports = {
   database: {
-    host: "localhost",
-    user: "root",
-    password: "",
-    database: "bike_tools",
+    host: "us-cdbr-east.cleardb.com",
+    user: "adffdadf2341",
+    password: "adf4234",
+    database: "heroku_db",
     //port: "3308",
   },
 };
